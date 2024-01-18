@@ -1,0 +1,28 @@
+# Clone MEDIAR github repo
+git clone https://github.com/Lee-Gihun/MEDIAR.git
+cd MEDIAR
+
+# Clone our changes github repo
+git clone
+
+# Replace files: generate_mapping.py, Trainer.py
+
+# Install dependencies
+pip install -r MEDIAR/requirements.txt
+pip install segmentation-models-pytorch==0.3.1
+pip install wandb
+wandb off
+
+# Prepare data
+python our_code/prepare_data.py project-5-at-2023-12-26-23-30-2534b123.zip
+
+# Generate mapping
+python generate_mapping.py --root=/content/data/dataset
+
+# Load weights
+mkdir weights
+mkdir weights/pretrained
+gdown https://drive.google.com/uc?id=1NHDaYvsYz3G0OCqzegT-bkNcly2clPGR -O weights/pretrained/phase2.pth
+
+# Train model
+python main.py --config_path=/content/MEDIAR/config/step2_finetuning/finetuning2.json
