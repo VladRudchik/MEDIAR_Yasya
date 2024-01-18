@@ -2,7 +2,7 @@
 git clone https://github.com/Lee-Gihun/MEDIAR.git
 cd MEDIAR
 
-# Clone our changes github rep
+# Clone our changes github repo
 git clone https://github.com/VladRudchik/MEDIAR_Yasya.git
 
 # Replace files: generate_mapping.py, Trainer.py
